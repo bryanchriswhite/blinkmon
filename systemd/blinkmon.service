@@ -1,0 +1,10 @@
+[Unit]
+Description="Blink(1) monitoring service"
+
+[Service]
+Type=simple
+ExecStart=blinkmon
+PIDFile=/run/blinkmon.pid
+
+[Install]
+WantedBy=multi-user.target

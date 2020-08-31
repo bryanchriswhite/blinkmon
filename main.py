@@ -4,7 +4,7 @@ import time
 from datetime import datetime, timedelta
 import requests
 import sys
-from signal import signal, SIGINT
+from signal import signal, SIGINT, SIGTERM
 
 from blink1.blink1 import Blink1
 
@@ -18,6 +18,7 @@ def interrupt_handler(sig, frame):
     sys.exit(1)
 
 signal(SIGINT, interrupt_handler)
+signal(SIGTERM, interrupt_handler)
 
 while True:
     b1.fade_to_color(250, 'white')

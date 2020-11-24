@@ -8,7 +8,7 @@ from signal import signal, SIGINT, SIGTERM
 
 from blink1.blink1 import Blink1
 
-WARN_PING_DELAY = {'seconds': 30}
+WARN_PING_DELAY = {'minutes': 3}
 
 b1 = Blink1()
 
@@ -43,7 +43,7 @@ while True:
         b1.fade_to_rgb(150, 255, 0, 0, 1)
         b1.fade_to_rgb(150, 255, 153, 0, 2)
 
-    time.sleep(5)
+    time.sleep(15)
 
 # Low disk space (colored fg)
 # Not up to date (blue bg)

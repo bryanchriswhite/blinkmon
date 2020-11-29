@@ -1,0 +1,6 @@
+[Unit]
+Description="Stop blinkmon service"
+
+[Service]
+Type=oneshot
+ExecStart=/bin/echo ''

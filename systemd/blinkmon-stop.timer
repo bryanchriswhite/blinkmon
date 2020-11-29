@@ -1,0 +1,9 @@
+[Unit]
+Description=Stop blinkmon in evening.
+
+[Timer]
+OnCalendar=*-*-* 19:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

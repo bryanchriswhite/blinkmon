@@ -30,6 +30,7 @@ for f in $files; do
     ln -s $(pwd)/systemd/$f $dest
   fi
 done
+systemctl --user daemon-reload
 
 if [[ ! -e $blinkmon_dest ]]; then
   sudo ln -s $dir/blinkmon.sh $blinkmon_dest

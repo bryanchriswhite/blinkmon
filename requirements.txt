@@ -7,3 +7,4 @@ idna==2.10
 requests==2.24.0
 urllib3==1.25.10
 webcolors==1.11.1
+semver==2.13.0

@@ -14,16 +14,18 @@ def supports_arm_v5(image):
     
 
 def get_page(page_num, page_size):
-    return requests.get(
+    res = requests.get(
         DOCKERHUB_STORAGENODE_IMAGES_URL,
         params={
                 'page': page_num,
                 'page_size': page_size,
             }
     ).json()
+    #print(res)
+    return res
 
 def get_images():
-    return parse_page(get_page(1, 350))
+    return parse_page(get_page(1, 500))
 
 def parse_page(page):
     return [image for image in page['results'] if supports_arm_v5(image)]

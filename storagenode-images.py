@@ -6,9 +6,9 @@ import semver
 
 DOCKERHUB_STORAGENODE_IMAGES_URL = 'https://hub.docker.com/v2/repositories/storjlabs/storagenode/tags' #?page_size=50&page=1
 
-def supports_arm_v6(image):
+def supports_arm_v5(image):
     for _image in image['images']:
-        if _image['architecture'] == 'arm' and _image['variant'] == 'v6':
+        if _image['architecture'] == 'arm' and _image['variant'] == 'v5':
             return True
     return False
     
@@ -26,7 +26,7 @@ def get_images():
     return parse_page(get_page(1, 350))
 
 def parse_page(page):
-    return [image for image in page['results'] if supports_arm_v6(image)]
+    return [image for image in page['results'] if supports_arm_v5(image)]
 
 #def should_update(rollout_cursor):
 
@@ -39,7 +39,7 @@ if __name__ == "__main__":
             print(image['name'])
         #for subimage in image['images']:
             #print(subimage)
-            #print(subimage['architecture'] == 'arm' and subimage['variant'] == 'v6')
+            #print(subimage['architecture'] == 'arm' and subimage['variant'] == 'v5')
         #print('--')
 
     #try:
